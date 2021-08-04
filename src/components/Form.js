@@ -26,9 +26,6 @@ class Form extends React.Component {
         let isFormatValid = this.formatValidation(firstValue, secondValue);
 
         if (isFormatValid) {
-            console.log("S.I".split(".")[0])
-            console.log("S.I".split(".")[1])
-            console.log("S.I".split(".").length)
             this.checkVersions(firstValue, secondValue);
         }
 
@@ -66,8 +63,8 @@ class Form extends React.Component {
         let iterations = firstValueNumbersSize > secondValueNumbersSize ? firstValueNumbersSize : secondValueNumbersSize;
 
         for (let i = 0; i < iterations; i++) {
-            let s1CurrentNumber = i < firstValueNumbersSize ? firstValueNumbers[i] : 0;
-            let s2CurrentNumber = i < secondValueNumbersSize ? secondValueNumbers[i] : 0;
+            let s1CurrentNumber = i < firstValueNumbersSize ? parseInt(firstValueNumbers[i]) : 0;
+            let s2CurrentNumber = i < secondValueNumbersSize ? parseInt(secondValueNumbers[i]) : 0;
 
             if (s1CurrentNumber < s2CurrentNumber) {
                 result = 1;
